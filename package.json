@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,24 @@
   "bugs": {
     "url": "https://github.com/Draftbnb/imageCarousel/issues"
   },
-  "homepage": "https://github.com/Draftbnb/imageCarousel#readme"
+  "homepage": "https://github.com/Draftbnb/imageCarousel#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  }
 }
