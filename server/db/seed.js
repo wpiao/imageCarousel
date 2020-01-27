@@ -23,9 +23,5 @@ const dataExtract = jsonData.map((obj) => {
 });
 
 GalleryModel.insertMany(dataExtract)
-  .then((docs) => {
-    console.log(`Successfully inserted ${docs.length} documents`);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  .then((docs) => console.log(`Successfully inserted ${docs.length} documents`))
+  .catch((err) => console.log(err));
