@@ -5,8 +5,7 @@ const bigImageDiv = styled.div`
   justify-content: center;
   vertical-align: middle;
   position: relative;
-  /* overflow:hidden; */
-  width: ${(props) => props.size}%;
+  flex: ${(props) => props.size};
   height: 100%;
   color: #484848;
   border-width: 1px;

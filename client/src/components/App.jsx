@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ImageHeader from './ImageHeader.jsx';
 
-const App = (props) => {
+const App = () => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [loadedGallery, setLoadedGallery] = useState({});
   const [dimensions, setDimensions] = useState({
@@ -60,7 +60,6 @@ const App = (props) => {
     );
   }
   return content;
-
 };
 
 

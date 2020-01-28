@@ -6,6 +6,7 @@ const bigImage = styled.img`
   cursor: pointer;
   position: absolute;
   transform: scale(1);
+  max-width: 100%;
 `;
 
 export default bigImage;
