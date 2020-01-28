@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const smallImage = styled.img`
+const bigImage = styled.img`
   top: 0px;
   left: 0px;
   cursor: pointer;
-  width: 318px;
   position: absolute;
+  transform: scale(1);
 `;
 
-export default smallImage;
+export default bigImage;
