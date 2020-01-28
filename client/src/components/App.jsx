@@ -5,7 +5,28 @@ import ImageHeader from './ImageHeader.jsx';
 const App = (props) => {
   const [isShowModal, setIsShowModal] = useState(false);
   const [loadedGallery, setLoadedGallery] = useState({});
-  const [currentWidth, setCurrentWidth] = useState(0);
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
+  const resizeHandler = () => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
+
+  const viewSelectHandler = (bool) => {
+    setIsShowModal(bool);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', resizeHandler);
+
+    return () => window.removeEventListener('resize', resizeHandler);
+  });
+
 
   const fetchData = (id) => {
     const url = `http://localhost:3000/gallery/${id}`;
@@ -19,27 +40,20 @@ const App = (props) => {
       });
   };
 
-  const viewSelectHandler = (bool) => {
-    setIsShowModal(bool);
-  };
-
-  const windowChangeHandler = (width) => {
-
-  };
-
 
   useEffect(() => {
     fetchData(32);
   }, []);
 
-  console.log(loadedGallery)
+  console.log(loadedGallery);
+  console.log(dimensions);
 
   let content = <p>Loading...</p>;
   if (!isShowModal && loadedGallery && Object.keys(loadedGallery).length > 0) {
     content = (
       <>
         <ImageHeader
-          viewSelectHandler={viewSelectHandler}
+          dimensions={dimensions}
           listingObj={loadedGallery}
         />
       </>

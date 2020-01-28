@@ -7,7 +7,7 @@ const bigImageDiv = styled.div`
   position: relative;
   /* overflow:hidden; */
   width: ${(props) => props.size}%;
-  height: ${window.innerHeight * 0.529}px;
+  height: 100%;
   color: #484848;
   border-width: 1px;
   border-style: solid;

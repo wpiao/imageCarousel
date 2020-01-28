@@ -19,8 +19,8 @@ const smallImageDiv = styled.div`
   vertical-align: middle;
   position: relative;
   ${(props) => props.collapse && media[props.collapse]('display: none;')};
-  height: ${window.innerHeight * 0.529}px;
   width: ${(props) => props.size}%;
+  height: 100%;
 `;
 
 export default smallImageDiv;
