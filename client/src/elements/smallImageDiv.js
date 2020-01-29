@@ -13,6 +13,7 @@ const media = {
   `,
 };
 
+
 const smallImageDiv = styled.div`
   align-items: center;
   justify-content: center;

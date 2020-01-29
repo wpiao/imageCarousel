@@ -11,6 +11,7 @@ const Row = styled.div`
   width: 100%;
   border-width: 1px;
   border-style: solid;
+  overflow: hidden;
 `;
 
 export default Row;
