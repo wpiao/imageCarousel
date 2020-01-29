@@ -50,14 +50,24 @@ const App = () => {
   console.log(dimensions);
 
   let content = <p>Loading...</p>;
-  if (!isShowModal && loadedGallery && Object.keys(loadedGallery).length > 0) {
+  if (!isShowModal && loadedGallery
+    && Object.keys(loadedGallery).length > 0
+    && dimensions.width / screen.width > 0.58046875) {
     content = (
       <>
-        {/* <MinImageHeader listingObj={loadedGallery} /> */}
         <ImageHeader
           dimensions={dimensions}
           listingObj={loadedGallery}
         />
+      </>
+    );
+  }
+  if (!isShowModal && loadedGallery
+    && Object.keys(loadedGallery).length > 0
+    && dimensions.width / screen.width <= 0.58046875) {
+    content = (
+      <>
+        <MinImageHeader listingObj={loadedGallery} />
       </>
     );
   }

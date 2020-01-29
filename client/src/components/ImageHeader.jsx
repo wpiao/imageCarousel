@@ -23,8 +23,6 @@ const ImageHeader = ({ listingObj, dimensions }) => {
     setHoveredImage(null);
   };
 
-  console.log(hoveredImage);
-
   const content = (
     <>
       <Grid width={screen.width}>

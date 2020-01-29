@@ -16,12 +16,12 @@ const MinImageHeader = ({ listingObj }) => {
         </ImageContainerDiv>
         <DotsContainerDiv>
           <DotsInnerContainerDiv>
-            <DotsDiv width="18" opacity="1" />
-            <DotsDiv width="16" opacity="1" />
-            <DotsDiv width="16" opacity="1" />
-            <DotsDiv width="16" opacity="1" />
-            <DotsDiv width="16" opacity="1" />
-            <DotsDiv width="10.6667" opacity=".875" />
+            <DotsDiv width="18" height="8" opacity="1" scale="1" size="8" />
+            <DotsDiv width="16" height="6" opacity="1" scale="1" size="6" />
+            <DotsDiv width="16" height="6" opacity="1" scale="1" size="6" />
+            <DotsDiv width="16" height="6" opacity="1" scale="1" size="6" />
+            <DotsDiv width="16" height="6" opacity="1" scale="1" size="6" />
+            <DotsDiv width="10.6667" height="6" opacity=".875" scale="0.666667" size="6" />
           </DotsInnerContainerDiv>
         </DotsContainerDiv>
       </BlurryDiv>
