@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ImageHeader from './ImageHeader.jsx';
+import MinImageHeader from './MinImageHeader.jsx';
 
 const App = () => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -52,6 +53,7 @@ const App = () => {
   if (!isShowModal && loadedGallery && Object.keys(loadedGallery).length > 0) {
     content = (
       <>
+        {/* <MinImageHeader listingObj={loadedGallery} /> */}
         <ImageHeader
           dimensions={dimensions}
           listingObj={loadedGallery}
