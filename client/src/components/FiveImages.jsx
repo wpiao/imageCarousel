@@ -6,7 +6,7 @@ import BigImageDiv from '../elements/ImageHeader/bigImageDiv';
 import SmallImage from '../elements/ImageHeader/smallImage';
 import SmallImageDiv from '../elements/ImageHeader/smallImageDiv';
 
-const FiveImages = ({ listingObj }) => {
+const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
   const [hoveredImage, setHoveredImage] = useState(null);
 
   const bigImgUrl = `${listingObj.listing_images[0].url.split('?')[0]}?aki_policy=xx_large`;
@@ -23,6 +23,11 @@ const FiveImages = ({ listingObj }) => {
     setHoveredImage(null);
   };
 
+  const onClickHandler = (e) => {
+    clickedImageHandler(e);
+    viewSelectHandler(true);
+  };
+
   return (
     <Grid width={screen.width}>
       <BigImageDiv size={50}>
@@ -32,6 +37,7 @@ const FiveImages = ({ listingObj }) => {
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseExitHandler}
           hoveredImage={hoveredImage}
+          onClick={onClickHandler}
         />
       </BigImageDiv>
       <SmallImageDiv collapse="middle" size={25}>
@@ -42,6 +48,7 @@ const FiveImages = ({ listingObj }) => {
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}
             hoveredImage={hoveredImage}
+            onClick={onClickHandler}
           />
         </Row>
         <Row>
@@ -51,6 +58,7 @@ const FiveImages = ({ listingObj }) => {
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}
             hoveredImage={hoveredImage}
+            onClick={onClickHandler}
           />
         </Row>
       </SmallImageDiv>
@@ -62,6 +70,7 @@ const FiveImages = ({ listingObj }) => {
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}
             hoveredImage={hoveredImage}
+            onClick={onClickHandler}
           />
         </Row>
         <Row>
@@ -71,6 +80,7 @@ const FiveImages = ({ listingObj }) => {
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}
             hoveredImage={hoveredImage}
+            onClick={onClickHandler}
           />
         </Row>
       </SmallImageDiv>

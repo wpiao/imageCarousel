@@ -3,9 +3,12 @@ import SaveButtonContainerDiv from '../elements/ImageHeader/saveButtonContainerD
 import Button from '../elements/ImageHeader/button';
 import FontDiv from '../elements/fontDiv';
 
-const ViewPhotosButton = () => (
+const ViewPhotosButton = (props) => (
   <SaveButtonContainerDiv>
-    <Button width="113.781">
+    <Button
+      width="113.781"
+      onClick={() => props.viewSelectHandler(true)}
+    >
       <FontDiv>View Photos</FontDiv>
     </Button>
   </SaveButtonContainerDiv>

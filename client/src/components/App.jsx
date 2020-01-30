@@ -2,14 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ImageHeader from './ImageHeader.jsx';
 import MinImageHeader from './MinImageHeader.jsx';
+import Modal from './Modal.jsx';
 
 const App = () => {
-  const [isShowModal, setIsShowModal] = useState(false);
-  const [loadedGallery, setLoadedGallery] = useState({});
+  const [loadedGallery, setLoadedGallery] = useState(null);
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
   });
+  const [isShowModal, setIsShowModal] = useState(false);
+  const [clickedImage, setClickedImage] = useState(1);
+
+  const clickedImageHandler = (e) => {
+    setClickedImage(e.target.name);
+  };
 
   const resizeHandler = () => {
     setDimensions({
@@ -46,16 +52,15 @@ const App = () => {
     fetchData(32);
   }, []);
 
-  console.log(loadedGallery);
-  console.log(dimensions);
 
   let content = <p>Loading...</p>;
   if (!isShowModal && loadedGallery
-    && Object.keys(loadedGallery).length > 0
     && dimensions.width / screen.width > 0.58046875) {
     content = (
       <>
         <ImageHeader
+          viewSelectHandler={viewSelectHandler}
+          clickedImageHandler={clickedImageHandler}
           dimensions={dimensions}
           listingObj={loadedGallery}
         />
@@ -63,14 +68,27 @@ const App = () => {
     );
   }
   if (!isShowModal && loadedGallery
-    && Object.keys(loadedGallery).length > 0
     && dimensions.width / screen.width <= 0.58046875) {
     content = (
       <>
-        <MinImageHeader listingObj={loadedGallery} />
+        <MinImageHeader
+          viewSelectHandler={viewSelectHandler}
+          listingObj={loadedGallery}
+        />
       </>
     );
   }
+  if (isShowModal && loadedGallery) {
+    content = (
+      <>
+        <Modal
+          listingObj={loadedGallery}
+          clickedImage={clickedImage}
+        />
+      </>
+    );
+  }
+
   return content;
 };
 
