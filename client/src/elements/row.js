@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const Row = styled.div`
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   justify-content: center;
   vertical-align: middle;
   background-color: rgb(0,0,0);

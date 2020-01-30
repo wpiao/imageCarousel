@@ -13,10 +13,10 @@ const media = {
   `,
 };
 
-
 const smallImageDiv = styled.div`
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   vertical-align: middle;
   position: relative;
   ${(props) => props.collapse && media[props.collapse]('display: none;')};
