@@ -84,6 +84,7 @@ const App = () => {
         <Modal
           listingObj={loadedGallery}
           clickedImage={clickedImage}
+          viewSelectHandler={viewSelectHandler}
         />
       </>
     );
