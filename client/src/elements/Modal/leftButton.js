@@ -12,6 +12,7 @@ const leftButton = styled.button`
   text-align: left !important;
   background: none !important;
   border-width: 0px !important;
+  outline: none;
 `;
 
 export default leftButton;

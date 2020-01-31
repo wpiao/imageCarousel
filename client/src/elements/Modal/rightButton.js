@@ -12,6 +12,7 @@ const rightButton = styled.button`
   text-align: right !important;
   background: none !important;
   border-width: 0px !important;
+  outline: none;
 `;
 
 export default rightButton;
