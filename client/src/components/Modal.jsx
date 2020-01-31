@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from 'react';
-
-
-// Left Side
-// Right Side
+import ContainerDiv from '../elements/containerDiv';
+import ModalCarousel from './ModalCarousel.jsx';
+import ModalImage from './ModalImage.jsx';
 
 const Modal = (props) => {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [imageList, setImageList] = useState(null);
 
   const xxLImageUrl = (url) => `${url.split('?')[0]}?aki_policy=xx_large`;
+
+  const leftClickHandler = () => {
+    if (currentIndex === 0) {
+      setCurrentIndex(imageList.length - 1);
+    } else {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const rightClickHandler = () => {
+    const nextIndex = (currentIndex + 1) % imageList.length;
+    setCurrentIndex(nextIndex);
+  };
 
   useEffect(() => {
     setCurrentIndex(Number(props.clickedImage));
@@ -20,13 +32,21 @@ const Modal = (props) => {
     }));
   }, []);
 
-  console.log(imageList);
-  console.log(currentIndex);
+  console.log(currentIndex)
+
   let content = <p>Loading...</p>;
-  if (currentIndex) {
+  if (currentIndex !== null) {
     content = (
       <>
-        <img alt={imageList[currentIndex].caption} src={imageList[currentIndex].url} />
+        <ContainerDiv>
+          <ModalImage
+            imageList={imageList}
+            currentIndex={currentIndex}
+            rightClickHandler={rightClickHandler}
+            leftClickHandler={leftClickHandler}
+          />
+          <ModalCarousel />
+        </ContainerDiv>
       </>
     );
   }

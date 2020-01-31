@@ -11,7 +11,7 @@ const App = () => {
     width: window.innerWidth,
   });
   const [isShowModal, setIsShowModal] = useState(false);
-  const [clickedImage, setClickedImage] = useState(1);
+  const [clickedImage, setClickedImage] = useState(0);
 
   const clickedImageHandler = (e) => {
     setClickedImage(e.target.name);
