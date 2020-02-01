@@ -33,8 +33,6 @@ const Modal = (props) => {
     }));
   }, []);
 
-  console.log(currentIndex)
-
   let content = <p>Loading...</p>;
   if (currentIndex !== null) {
     content = (
@@ -48,7 +46,7 @@ const Modal = (props) => {
           />
           <ModalCarousel />
           <ContainerDiv z_index="4" position="absolute" top="0" right="0" top_margin="40" right_margin="40">
-            <CloseButton onClick={() => props.viewSelectHandler(false)}>
+            <CloseButton data-testid="closeBtn" onClick={() => props.viewSelectHandler(false)}>
               <svg
                 viewBox="0 0 24 24"
                 focusable="false"

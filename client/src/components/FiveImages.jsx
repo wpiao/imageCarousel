@@ -32,6 +32,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
     <Grid width={screen.width}>
       <BigImageDiv size={50}>
         <BigImage
+          data-testid="big"
           name="0"
           src={bigImgUrl}
           onMouseEnter={mouseEnterHandler}
@@ -43,6 +44,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
       <SmallImageDiv collapse="middle" size={25}>
         <Row>
           <SmallImage
+            data-testid="small1"
             name="1"
             src={smallImgUrl1}
             onMouseEnter={mouseEnterHandler}
@@ -54,6 +56,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
         <Row>
           <SmallImage
             name="2"
+            data-testid="small2"
             src={smallImgUrl2}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}
@@ -66,6 +69,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
         <Row>
           <SmallImage
             name="3"
+            data-testid="small3"
             src={smallImgUrl3}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}
@@ -76,6 +80,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
         <Row>
           <SmallImage
             name="4"
+            data-testid="small4"
             src={smallImgUrl4}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseExitHandler}

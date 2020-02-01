@@ -12,7 +12,7 @@ const MinImageHeader = ({ listingObj }) => {
     <>
       <BlurryDiv>
         <ImageContainerDiv>
-          <BlurryImageDiv id={listingObj.listing_images[0].id} />
+          <BlurryImageDiv data-testid="image" id={listingObj.listing_images[0].id} />
         </ImageContainerDiv>
         <DotsContainerDiv>
           <DotsInnerContainerDiv>

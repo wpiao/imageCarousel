@@ -4,7 +4,7 @@ import ImageHeader from './ImageHeader.jsx';
 import MinImageHeader from './MinImageHeader.jsx';
 import Modal from './Modal.jsx';
 
-const App = () => {
+const App = (props) => {
   const [loadedGallery, setLoadedGallery] = useState(null);
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
@@ -35,10 +35,10 @@ const App = () => {
   });
 
 
-  const fetchData = (id) => {
-    const url = `http://localhost:3000/gallery/${id}`;
+  const fetchData = () => {
+    // const url = `http://localhost:3000/gallery/${id}`;
 
-    axios.get(url)
+    axios.get(props.url)
       .then(({ data }) => {
         setLoadedGallery(data[0]);
       })
@@ -49,9 +49,10 @@ const App = () => {
 
 
   useEffect(() => {
-    fetchData(32);
+    fetchData();
   }, []);
 
+  console.log(loadedGallery);
 
   let content = <p>Loading...</p>;
   if (!isShowModal && loadedGallery
@@ -59,6 +60,7 @@ const App = () => {
     content = (
       <>
         <ImageHeader
+          data-testid="header"
           viewSelectHandler={viewSelectHandler}
           clickedImageHandler={clickedImageHandler}
           dimensions={dimensions}
