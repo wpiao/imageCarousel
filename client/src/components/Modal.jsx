@@ -44,7 +44,11 @@ const Modal = (props) => {
             rightClickHandler={rightClickHandler}
             leftClickHandler={leftClickHandler}
           />
-          <ModalCarousel />
+          <ModalCarousel
+            listingObj={props.listingObj}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+          />
           <ContainerDiv z_index="4" position="absolute" top="0" right="0" top_margin="40" right_margin="40">
             <CloseButton data-testid="closeBtn" onClick={() => props.viewSelectHandler(false)}>
               <svg

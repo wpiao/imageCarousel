@@ -21,10 +21,14 @@ const containerDiv = styled.div`
   /* Margin & Padding*/
   ${(props) => (props.padding ? `padding: ${props.padding}px;` : null)}
   ${(props) => (props.padding_top ? `padding-top: ${props.padding_top}px;` : null)}
+  ${(props) => (props.padding_bottom ? `padding-bottom: ${padding_bottom}px;` : null)}
+  ${(props) => (props.padding_left ? `padding-left: ${props.padding_left}px;` : null)}
+  ${(props) => (props.padding_right ? `padding-right: ${props.padding_right}px;` : null)}
+  ${(props) => (props.margin ? `margin: ${props.margin}px;` : null)}
   ${(props) => (props.right_margin ? `margin-right: ${props.right_margin}px;` : null)}
   ${(props) => (props.top_margin ? `margin-top: ${props.top_margin}px;` : null)}
   ${(props) => (props.left_margin ? `margin-left: ${props.left_margin}px;` : null)}
-  ${(props) => (props.bottom_margin ? `margin-bottom: ${props.left_margin}px;` : null)}
+  ${(props) => (props.bottom_margin ? `margin-bottom: ${props.bottom_margin}px;` : null)}
 
   /* Height & Width */
   ${(props) => (props.flex_basis ? `flex-basis: ${props.flex_basis}px;` : null)};
@@ -35,9 +39,11 @@ const containerDiv = styled.div`
   ${(props) => (props.height ? `height: ${props.height}px;` : null)};
   ${(props) => (props.width ? `width: ${props.width}px;` : null)};
   ${(props) => (props.min_width ? `min-width: ${props.min_width}px;` : null)};
+  ${(props) => (props.max_widthpercent ? `max-width: ${props.max_width}%;` : null)};
 
   /* left: auto;
   z-index: 1; */
+  ${(props) => (props.word_break ? `word-break: ${props.word_break};` : null)};
   ${(props) => (props.z_index ? `z-index: ${props.z_index};` : null)};
 `;
 
