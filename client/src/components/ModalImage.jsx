@@ -4,7 +4,6 @@ import LeftButton from '../elements/Modal/leftButton';
 import RightButton from '../elements/Modal/rightButton';
 import MainImage from '../elements/Modal/mainImage';
 import MediaA from '../elements/Modal/mediaA';
-import styled from 'styled-components';
 
 const ModalImage = ({ leftClickHandler, rightClickHandler, imageList, currentIndex }) => (
   <>

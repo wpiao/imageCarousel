@@ -23,6 +23,15 @@ const Modal = (props) => {
     setCurrentIndex(nextIndex);
   };
 
+  const onKeyDownHandler = (e) => {
+    if (e.keyCode === 37) {
+      leftClickHandler();
+    }
+    if (e.keyCode === 39) {
+      rightClickHandler();
+    }
+  };
+
   useEffect(() => {
     setCurrentIndex(Number(props.clickedImage));
 
@@ -32,6 +41,12 @@ const Modal = (props) => {
       return result;
     }));
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDownHandler);
+
+    return () => window.removeEventListener('keydown', onKeyDownHandler);
+  });
 
   let content = <p>Loading...</p>;
   if (currentIndex !== null) {
