@@ -7,8 +7,6 @@ import MediaB from '../elements/Modal/mediaB';
 import MediaCaption from '../elements/Modal/mediaCaption';
 
 const ModalCarousel = (props) => {
-  // props.setCurrentIndex is the current image to display
-  // should set first image as imageList[props.currentIndex]
   const [translateAmount, setTranslateAmount] = useState([]);
   const [smallImageList, setSmallImageList] = useState([]);
   const smallImageUrl = (url) => `${url.split('?')[0]}?aki_policy=small`;
