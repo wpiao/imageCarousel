@@ -3,10 +3,12 @@ import ContainerDiv from '../elements/containerDiv';
 import LeftButton from '../elements/Modal/leftButton';
 import RightButton from '../elements/Modal/rightButton';
 import MainImage from '../elements/Modal/mainImage';
+import MediaA from '../elements/Modal/mediaA';
+import styled from 'styled-components';
 
 const ModalImage = ({ leftClickHandler, rightClickHandler, imageList, currentIndex }) => (
   <>
-    <ContainerDiv box_sizing="border-box" widthpercent={100} heightvh={100} padding={40} display="table-cell" vertical_align="middle">
+    <MediaA>
       <ContainerDiv heightpercent={100} display="flex" position="relative" justify_content="center">
         <ContainerDiv>
           <LeftButton onClick={leftClickHandler}>
@@ -36,7 +38,7 @@ const ModalImage = ({ leftClickHandler, rightClickHandler, imageList, currentInd
           <MainImage onClick={rightClickHandler} src={imageList[currentIndex].url} />
         </ContainerDiv>
       </ContainerDiv>
-    </ContainerDiv>
+    </MediaA>
   </>
 );
 

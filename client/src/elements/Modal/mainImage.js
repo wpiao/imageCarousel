@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const mainImage = styled.img`
-    max-height: 75vh;
+    max-height: 55vh;
     object-fit: cover;
     cursor: pointer;
     z-index: 2;
@@ -14,6 +14,10 @@ const mainImage = styled.img`
     left: 0px;
     right: 0px;
     bottom: 0px;
+
+    @media (min-width: 1128px) {
+    max-height: 75vh !important;
+  }
 `;
 
 export default mainImage;
