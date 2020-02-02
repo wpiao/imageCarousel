@@ -13,6 +13,7 @@ const Row = styled.div`
   border-width: 1px;
   border-style: solid;
   overflow: hidden;
+  ${(props) => (props.bottom ? `border-bottom-style:none` : null)};
 `;
 
 export default Row;

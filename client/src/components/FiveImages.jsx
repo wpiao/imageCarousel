@@ -53,7 +53,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
             onClick={onClickHandler}
           />
         </Row>
-        <Row>
+        <Row bottom="none">
           <SmallImage
             name="2"
             data-testid="small2"
@@ -77,7 +77,7 @@ const FiveImages = ({ viewSelectHandler, clickedImageHandler, listingObj }) => {
             onClick={onClickHandler}
           />
         </Row>
-        <Row>
+        <Row bottom="none">
           <SmallImage
             name="4"
             data-testid="small4"
