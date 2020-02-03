@@ -1,12 +1,14 @@
+const models = require('../models');
 const jsonData = require('./dummydata.js');
-const GalleryModel = require('./index.js');
 
-
-GalleryModel.deleteMany({})
-  .then((result) => console.log(`deleted count: ${result.deletedCount}`));
+models.gallery.deleteAll((err, data) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(`deleted count: ${data.deletedCount}`);
+});
 
 let count = 1;
-
 const dataExtract = jsonData.map((obj) => {
   const extract = {
     listing_id: count,
@@ -22,6 +24,9 @@ const dataExtract = jsonData.map((obj) => {
   return extract;
 });
 
-GalleryModel.insertMany(dataExtract)
-  .then((docs) => console.log(`Successfully inserted ${docs.length} documents`))
-  .catch((err) => console.log(err));
+models.gallery.insertAll(dataExtract, (err, data) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(`Successfully inserted ${data.length} documents`);
+});
