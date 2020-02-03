@@ -3,6 +3,8 @@ import axios from 'axios';
 import ImageHeader from './ImageHeader.jsx';
 import MinImageHeader from './MinImageHeader.jsx';
 import Modal from './Modal.jsx';
+import SaveButtonPortal from './SaveButtonPortal.jsx';
+import ShareButtonPortal from './ShareButtonPortal.jsx';
 
 const App = (props) => {
   const [loadedGallery, setLoadedGallery] = useState(null);
@@ -11,6 +13,8 @@ const App = (props) => {
     width: window.innerWidth,
   });
   const [isShowModal, setIsShowModal] = useState(false);
+  const [isShowSave, setIsShowSave] = useState(false);
+  const [isShowShare, setIsShowShare] = useState(false);
   const [clickedImage, setClickedImage] = useState(0);
 
   const clickedImageHandler = (e) => {
@@ -26,6 +30,14 @@ const App = (props) => {
 
   const viewSelectHandler = (bool) => {
     setIsShowModal(bool);
+  };
+
+  const shareButtonHandler = (bool) => {
+    setIsShowShare(bool);
+  };
+
+  const saveButtonHandler = (bool) => {
+    setIsShowSave(bool);
   };
 
   useEffect(() => {
@@ -52,7 +64,9 @@ const App = (props) => {
     fetchData();
   }, []);
 
-  console.log(loadedGallery);
+  console.log(isShowSave);
+  console.log(isShowShare);
+
 
   let content = <p>Loading...</p>;
   if (!isShowModal && loadedGallery
@@ -65,7 +79,15 @@ const App = (props) => {
           clickedImageHandler={clickedImageHandler}
           dimensions={dimensions}
           listingObj={loadedGallery}
+          shareButtonHandler={shareButtonHandler}
+          saveButtonHandler={saveButtonHandler}
         />
+        {isShowSave ?
+          <SaveButtonPortal saveButtonHandler={saveButtonHandler} />
+          : null}
+        {isShowShare ?
+          <ShareButtonPortal shareButtonHandler={shareButtonHandler} />
+          : null}
       </>
     );
   }

@@ -18,6 +18,12 @@ const containerDiv = styled.div`
   ${(props) => (props.bottom ? `bottom: ${props.bottom}px;` : null)};
   ${(props) => (props.left ? `left: ${props.left}px;` : null)};
 
+  /* Borders */
+  ${(props) => (props.border_top ? `border-top: ${props.border_top}px;` : null)}
+  ${(props) => (props.border_bottom ? `border-bottom: ${props.border_bottom}px;` : null)}
+  ${(props) => (props.border_top2 ? `border-top: ${props.border_top2};` : null)}
+  ${(props) => (props.border_bottom2 ? `border-bottom: ${props.border_bottom2};` : null)}
+
   /* Margin & Padding*/
   ${(props) => (props.padding ? `padding: ${props.padding}px;` : null)}
   ${(props) => (props.padding_top ? `padding-top: ${props.padding_top}px;` : null)}
@@ -41,15 +47,22 @@ const containerDiv = styled.div`
   ${(props) => (props.height ? `height: ${props.height}px;` : null)};
   ${(props) => (props.width ? `width: ${props.width}px;` : null)};
   ${(props) => (props.widthauto ? 'width: auto;' : null)};
+  ${(props) => (props.min_height ? `min-height: ${props.min_height}px;` : null)};
+  ${(props) => (props.min_heightvh ? `min-height: ${props.min_heightvh}vh;` : null)};
   ${(props) => (props.min_width ? `min-width: ${props.min_width}px;` : null)};
+  ${(props) => (props.max_width ? `max-width: ${props.max_width}px;` : null)};
   ${(props) => (props.max_widthpercent ? `max-width: ${props.max_widthpercent}%;` : null)};
   ${(props) => (props.max_widthvh ? `max-width: ${props.max_widthvh}vh;` : null)};
+  ${(props) => (props.max_widthvw ? `max-width: ${props.max_widthvw}vw;` : null)};
 
   /* left: auto;
   z-index: 1; */
+  ${(props) => (props.overflow_y ? `overflow-y: ${props.overflow_y};` : null)};
   ${(props) => (props.overflow ? `overflow: ${props.overflow};` : null)};
   ${(props) => (props.word_break ? `word-break: ${props.word_break};` : null)};
   ${(props) => (props.z_index ? `z-index: ${props.z_index};` : null)};
+  ${(props) => (props.background ? `background: ${props.background};` : null)};
+  ${(props) => (props.background_color ? `background-color: ${props.background_color};` : null)};
   ${(props) => (props.blur === 'left' ? 'transform: rotate(180deg) !important;' : null)};
   ${(props) => (props.blur ? 'background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 90.82%) !important;' : null)};
 `;

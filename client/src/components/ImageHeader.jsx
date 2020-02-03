@@ -5,8 +5,13 @@ import ShareButton from './ShareButton.jsx';
 import ViewPhotosButton from './ViewPhotosButton.jsx';
 import FiveImages from './FiveImages.jsx';
 
-const ImageHeader = ({ clickedImageHandler, viewSelectHandler, listingObj, dimensions }) => {
-  return (
+const ImageHeader = (
+  { shareButtonHandler,
+    saveButtonHandler,
+    clickedImageHandler,
+    viewSelectHandler,
+    listingObj,
+    dimensions }) => (
     <>
       <ContainerDiv position="relative" width={dimensions.width} box="border-box" height={screen.width * 0.22942187500000003}>
         <FiveImages
@@ -15,8 +20,8 @@ const ImageHeader = ({ clickedImageHandler, viewSelectHandler, listingObj, dimen
           listingObj={listingObj}
         />
         <ContainerDiv position="absolute" height="36" width="204.234" top="24" right="24">
-          <SaveButton />
-          <ShareButton />
+          <SaveButton saveButtonHandler={saveButtonHandler} />
+          <ShareButton shareButtonHandler={shareButtonHandler} />
         </ContainerDiv>
         <ContainerDiv position="absolute" height="36" width="113.781" bottom="24" right="24">
           <ViewPhotosButton
@@ -26,6 +31,5 @@ const ImageHeader = ({ clickedImageHandler, viewSelectHandler, listingObj, dimen
       </ContainerDiv>
     </>
   );
-};
 
 export default ImageHeader;

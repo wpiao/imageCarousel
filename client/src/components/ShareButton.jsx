@@ -4,9 +4,9 @@ import Button from '../elements/ImageHeader/button';
 import ContainerDiv from '../elements/containerDiv';
 import FontDiv from '../elements/fontDiv';
 
-const ShareButton = () => (
+const ShareButton = ({ shareButtonHandler }) => (
   <ShareButtonContainerDiv>
-    <Button width="96.219">
+    <Button onClick={() => shareButtonHandler(true)} width="96.219">
       <ContainerDiv display="flex" justify_content="center" height="22" width="64.219">
         <ContainerDiv display="inline-flex" align_self="center" height="15" width="27">
           <svg

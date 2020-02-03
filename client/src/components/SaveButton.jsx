@@ -4,9 +4,9 @@ import Button from '../elements/ImageHeader/button';
 import ContainerDiv from '../elements/containerDiv';
 import FontDiv from '../elements/fontDiv';
 
-const SaveButton = () => (
+const SaveButton = ({ saveButtonHandler }) => (
   <SaveButtonContainerDiv>
-    <Button width="90.016">
+    <Button onClick={() => saveButtonHandler(true)} width="90.016">
       <ContainerDiv display="flex" justify_content="center" height="22" width="58.016">
         <ContainerDiv display="inline-flex" align_self="center" height="15" width="27">
           <svg
