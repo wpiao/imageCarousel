@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:37017/gallery', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/gallery', { useNewUrlParser: true })
   .then(() => {
     console.log('Successfully connected to MongoDb');
   })

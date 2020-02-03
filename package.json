@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "webpack -w",
-    "start": "nodemon ./server/index.js"
+    "start": "nodemon ./server/index.js",
+    "seed": "node ./server/db/seed.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "jest": "^25.1.0",
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "regenerator-runtime": "^0.13.3",
